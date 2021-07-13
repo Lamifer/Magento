@@ -1,0 +1,33 @@
+<?php
+
+    echo "This is a custom tab.";
+    echo "<br>";
+
+    
+    // get current product data
+    $product = $block->getProduct();
+    
+    // get Product name
+    echo "<b>Product Name : </b>". $product->getName();
+    echo "<br>";
+    
+    // get product description
+    echo "<b>Description : </b>". $product->getDescription();
+    echo "<br>";
+    
+    // Get custom product attribute value, change ‘custom_product_attribute’ with your ‘product attribute code’
+    
+    if(null!=($product->getData('clothing_material'))){
+        echo "<b>Clothing Material : </b>". $product->getData('clothing_material');
+    }else{
+        echo "Test data.";
+    }
+    
+    echo $product->getData('editor_content');
+    echo "<br>";
+    echo "<b>Wearing Options : </b>".$product->getData('wearing_option');
+
+
+
+
+?>
